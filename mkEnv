@@ -56,4 +56,4 @@ local forceStep=${forceStep:=NULL}
   ln -s ~/__WORK/desktop ~/Desktop
 
   chown -R `whoami` ~
-  }
+  } 
