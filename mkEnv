@@ -1,0 +1,59 @@
+#!/usr/bin/env zsh
+
+## install steps
+local forceStep=${forceStep:=NULL}
+
+[[ ${forceStep} == "NULL" ]] && {
+  ## what os lin or bsd
+  cases "`uname -o`" in
+  "GNU/Linux")
+    for _pkg in apt yum; do
+      ${_pkg} install -y git
+      done
+      ;;
+  "FreeBSD")
+    pkg install git -y 
+    ;;
+  default)
+    printf "/e/ unknow OS"
+  esac
+
+
+  ## prepare temp
+  local _tmp="/tmp/${0}.$$$$"
+  mkdir ${_tmp} && cd ${_tmp}
+
+
+  ## clone repo
+  git clone https://github.com/shatfel/unix-env-lite
+
+  ## cding
+  cd unix-env-lite
+  chmod +x mkEnv
+  forceStep=run ./mkEnv
+  }
+
+[[ ${forceStep} == "run" ]] && {
+  local _pwd="`pwd`"
+
+  cd ~
+  mkdir __WORK
+
+  mkdir __WORK/bin
+  ln -s __WORK/bin ~/bin
+
+  mkdir __WORK/__TRASH
+  ln -s __WORK/__TRASH ~/tmp
+
+  mkdir __WORK/downlods
+  mv ~/Downlods/* ~/__WORK/downlods/
+  rm -rf ~/Downlods
+  ln -s ~/__WORK/downlods ~/Downlods
+
+  mkdir __WORK/desktop
+  mv ~/Desktop/* ~/__WORK/desktop/
+  rm -rf ~/Desktop
+  ln -s ~/__WORK/desktop ~/Desktop
+
+  chown -R `whoami` ~
+  }
