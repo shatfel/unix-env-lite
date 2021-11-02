@@ -55,13 +55,10 @@ plugins=(colorize git mercurial)
 PS1="[%F{magenta}${(L)${USER}}%F{white} %F{yellow}%3~%f]%K%#%k %f"
 RPS1="%F{white}[%F{red}%B%M%b%F{white}|%F{green}%D %T%F{white}]%f"
 
-###
-## OTPRC
-###
+
+## load otp
 [[ -f ~/.otp/otprc ]] && {
   printf "/i/ loading otprc..\n"
   . ~/.otp/otprc
   }
-
-
 

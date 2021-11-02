@@ -127,7 +127,9 @@ bindkey "^W" vi-backward-kill-word
 bindkey "^R" history-incremental-search-backward
 
 
-## load oTp
-[[ -f ${HOME}/.otprc ]] && \
-   . ${HOME}/.otprc
+## load otp
+[[ -f ~/.otp/otprc ]] && {
+  printf "/i/ loading otprc..\n"
+  . ~/.otp/otprc
+  }
 
