@@ -1,8 +1,10 @@
+## user
 [user]
 	##name = -user--
 	##email = -email--
 
 
+## aliases
 [alias]
 	co = checkout
 	br = branch
