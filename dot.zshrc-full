@@ -6,6 +6,7 @@ zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower
 zstyle ':completion:*' menu select=11
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' verbose true
+zstyle ':completion:*' rehash true
 zstyle :compinstall filename "${HOME}/.zshrc"
 
 autoload -Uz compinit

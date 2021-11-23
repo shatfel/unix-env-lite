@@ -10,6 +10,9 @@ zmodload zsh/computil
 zmodload zsh/zutil
 
 
+## auto rehash
+zstyle ':comletion:*' rehash true
+
 
 ###
 ## LOCALE
