@@ -6,4 +6,4 @@ set number
 set ts=2
 set sw=2
 set et
-hi Comment ctermfg=blue ctermbg=yellow
+hi Comment ctermfg=black ctermbg=lightyellow
