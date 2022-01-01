@@ -80,7 +80,6 @@ case "${TERM}" in
   *);;
 esac
 
-
 ## modify locales
 ## root
 if [[ "fk`id -u`" == "fk0" ]]; then
@@ -109,6 +108,13 @@ else
   export LC_NUMERIC="${_secondLocale}"
 fi
 
+## fix for android termux
+[[ -n ${TERMUX_VERSION} ]] && {
+  export LANG="C"
+  export LC_MESSAGE="C"
+  export LC_ALL="C"
+}
+
 
 ## keys binding
 ## vim
@@ -133,4 +139,3 @@ bindkey "^R" history-incremental-search-backward
   printf "/i/ loading otprc..\n"
   . ~/.otp/otprc
   }
-
