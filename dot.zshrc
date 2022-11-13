@@ -20,7 +20,7 @@ zstyle ':comletion:*' rehash true
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 
-export LC_MESsAGES="en_US.UTF-8"
+export LC_MESSAGES="en_US.UTF-8"
 
 export LC_COLLATE="ru_RU.UTF-8"
 export LC_MONETARY="ru_RU.UTF-8"
@@ -34,7 +34,7 @@ export LC_NUMERIC="ru_RU.UTF-8"
 ## console
 alias grep="egrep --color=auto --colour=always"
 alias mc="mc -cxXU"
-alias ls="ls --color=auto -F -T 2"
+alias ls="ls --color=auto -F"
 alias rm="rm -I"
 alias tmux="tmux -2lu"
 
