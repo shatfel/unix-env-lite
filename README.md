@@ -7,3 +7,4 @@
 3. 1. [zshrc](./dot.zshrc) Basic .zshrc default. Minimal for use.
 4. [vimrc](./dot.vimrc) My minimal .vimrc with additional line for colored comments.
    
+
