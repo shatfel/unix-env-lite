@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+### otp
+typeset -A _otpC
+_otpC=
+  "root" "/usr/local/otp"
+
+  "config" "etc/otp.conf"
+
+
+  )
