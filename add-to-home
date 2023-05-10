@@ -1,0 +1,27 @@
+#!/usr/bin/env zsh
+
+### vars
+_dotPath="${dotPath:=NULL}"
+_files=(zshrc-full vimrc gitconfig)
+
+
+
+###
+## check dot files path
+[[ ${_dotPath} == "NULL" ]] && {
+  printf "/usage/ <dotPath='path to dot.* files'> `basename ${0}`\n"
+  exit 1
+  }
+
+
+## copy to homedir
+for _f in ${_files[@]}; do
+  _outF="${_f}"
+
+  ## check for zshrc* in name
+  [[ ${_f} =~ zshrc ]] && _outF="zshrc"
+
+  ## copy files
+  printf "/i/ copy ${_dotPath}/dot.${_f} to ~/.${_outF} ..\n"
+  echo "cp ${_dotPath}/dot.${_f} ~/.${_outF}"
+  done
